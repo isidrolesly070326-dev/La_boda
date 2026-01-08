@@ -1416,18 +1416,21 @@
 <script>
     (function () {
         // --- 1. LÓGICA PARA LINK DINÁMICO ---
-        // Lee el parámetro 'C' de la URL (ej: ?C=3)
+        // Busca el parámetro 'cupo' en la URL del navegador (ej: ?cupo=3)
         const urlParams = new URLSearchParams(window.location.search);
-        const valorC = urlParams.get('C');
+        const valorCupo = urlParams.get('cupo'); 
 
-        if (valorC) {
+        if (valorCupo) {
             const btnRsvp = document.getElementById('boton-rsvp-jotform');
             if (btnRsvp) {
                 let urlOriginal = btnRsvp.getAttribute('href');
-                // Determina si usar '?' o '&' para añadir el parámetro
-                const conector = urlOriginal.includes('?') ? '&' : '?';
-                // Actualiza el link de Jotform con el parámetro 'cupo'
-                btnRsvp.setAttribute('href', urlOriginal + conector + 'cupo=' + valorC);
+                
+                // Limpiamos parámetros previos en el link de Jotform para evitar duplicados
+                let urlBase = urlOriginal.split('?')[0];
+                
+                // Actualiza el link del botón agregando el cupo al final
+                // Resultado esperado: https://form.jotform.com/... ?cupo=3
+                btnRsvp.setAttribute('href', urlBase + '?cupo=' + valorCupo);
             }
         }
 
@@ -1505,6 +1508,6 @@
             document.body.style.overflow = img.classList.contains('fullscreen') ? 'hidden' : 'auto';
         }
     })();
-</script>        
+</script>       
     </body>     
 </html>
