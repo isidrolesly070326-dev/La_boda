@@ -209,8 +209,8 @@
         font-weight: 300;
     }
 
-    /* Botón - Reducido y Corregido */
-    .btn-celebracion {
+    /* Botón - Reducido, Corregido y con Clase Actualizada */
+    .btn-celebracion-nuevo {
         display: inline-block;
         background-color: #bc778b;
         color: #ffffff;
@@ -225,6 +225,13 @@
         font-family: 'Montserrat', sans-serif;
         width: auto;
         height: auto;
+    }
+
+    /* También actualizamos el estado hover para la nueva clase */
+    .btn-celebracion-nuevo:hover {
+        transform: translateY(-2px);
+        background-color: #a65d71;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     }
 
     /* Estrellas y Subtítulo con Gotu */
@@ -505,7 +512,7 @@
 
     /* --- SECCIÓN VESTIMENTA --- */
     .vestimenta-section {
-        background-color: #f4f0eb;
+        background-color: #c1c1c1; /* Color gris solicitado */
         padding: 80px 20px;
         text-align: center;
         color: #333333;
@@ -1128,6 +1135,50 @@
             font-size: 3rem;
         }
     }
+
+/* --- ESTILOS DE BOTONES ACTUALIZADOS --- */
+    
+    /* Botón pequeño (para la sección Especial) */
+    .btn-celebracion-nuevo {
+        display: inline-block;
+        background-color: #bc778b;
+        color: #ffffff;
+        padding: 10px 25px;
+        border-radius: 40px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        margin-top: 30px;
+        transition: transform 0.3s ease;
+        font-family: 'Montserrat', sans-serif;
+        width: auto;
+        height: auto;
+    }
+
+    /* Botón original (para la sección RSVP / Confirmación) */
+    .btn-celebracion {
+        display: inline-block;
+        background-color: #bc778b;
+        color: #ffffff;
+        padding: 15px 35px;
+        border-radius: 40px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        margin-top: 20px;
+        transition: transform 0.3s ease;
+        font-family: 'Montserrat', sans-serif;
+        width: auto;
+        height: auto;
+    }
+
+    /* Efecto para ambos botones */
+    .btn-celebracion-nuevo:hover, .btn-celebracion:hover {
+        transform: translateY(-2px);
+        filter: brightness(0.9);
+    }
 </style>      
     </head>     
     <body> 
@@ -1144,13 +1195,20 @@
             </div>             
         </section>         
         <section id="especial"> 
-            <h2 class="titulo-boda reveal reveal-up">Nuestra boda, un día especial</h2> 
-            <div class="texto-contenedor reveal reveal-up delay-1"> 
-                <p style="font-size: 19px; padding-left: 9px; margin-right: 9px;">Tenemos el gusto de invitarte a este día tan importante de nuestras vidas<br>Queremos compartir contigo la felicidad de nuestra unión<br>Esperamos contar con tu presencia</p>                                   
-            </div>             <a href="https://form.jotform.com/260032396916054" class="btn-celebracion reveal reveal-pop delay-2" target="_blank">¡Únete a nuestra celebración!</a> 
-            <div class="estrellas reveal reveal-up">★★★★★</div>             
-            <p class="subtitulo-final reveal reveal-up">Un momento inolvidable</p> 
-        </section>         
+    <h2 class="titulo-boda reveal reveal-up">Nuestra boda, un día especial</h2> 
+    <div class="texto-contenedor reveal reveal-up delay-1"> 
+        <p style="font-size: 19px; padding-left: 9px; margin-right: 9px;">
+            Tenemos el gusto de invitarte a este día tan importante de nuestras vidas<br>
+            Queremos compartir contigo la felicidad de nuestra unión<br>
+            Esperamos contar con tu presencia
+        </p>                                     
+    </div>              
+    
+    <a href="#seccion-rsvp" class="btn-celebracion-nuevo reveal reveal-pop delay-2">¡Únete a nuestra celebración!</a> 
+
+    <div class="estrellas reveal reveal-up">★★★★★</div>               
+    <p class="subtitulo-final reveal reveal-up">Un momento inolvidable</p> 
+</section>
         <section id="carousel-section" class="carousel-section"> 
             <div class="carousel-container"> 
                 <div class="carousel-slide" id="slide"> 
@@ -1332,18 +1390,20 @@
                     </article>                     
                 </div>                 
             </div>             
-        </section>         
-        <section class="seccion-rsvp"> 
-            <div class="rsvp-container reveal reveal-up"> 
-                <h2 class="rsvp-titulo">Confirmación</h2> 
-                <div class="rsvp-subtitulo">RSVP</div>                 
-                <p class="rsvp-texto"> 
-                Por favor, confirma tu asistencia antes del 15 de febrero de 2026.  </p> 
-                <div> <a href="https://form.jotform.com/260032396916054" class="btn-celebracion" target="_blank"> 
-                    CLICK AQUÍ PARA CONFIRMAR </a> 
-                </div>                 
-            </div>             
-        </section>         
+<section id="seccion-rsvp" class="seccion-rsvp"> 
+    <div class="rsvp-container reveal reveal-up"> 
+        <h2 class="rsvp-titulo">Confirmación</h2> 
+        <div class="rsvp-subtitulo">RSVP</div>                  
+        <p class="rsvp-texto"> 
+            Por favor, confirma tu asistencia antes del 15 de febrero de 2026. 
+        </p> 
+        <div> 
+            <a id="boton-rsvp-jotform" href="https://form.jotform.com/260032396916054" class="btn-celebracion" target="_blank"> 
+                RELLENAR FORMULARIO
+            </a> 
+        </div>                  
+    </div>              
+</section>
         <footer class="footer-wedding"> 
             <h2 class="footer-names reveal reveal-up">Lesly & Isidro</h2> 
             <div class="footer-date reveal reveal-up">07 de Marzo, 2026</div>             
@@ -1427,7 +1487,8 @@
             img.classList.toggle('fullscreen');
             document.body.style.overflow = img.classList.contains('fullscreen') ? 'hidden' : 'auto';
         }
-    })();
-    </script>         
+ 
+      })();
+</script>         
     </body>     
 </html>
